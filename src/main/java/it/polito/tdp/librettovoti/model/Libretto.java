@@ -16,7 +16,15 @@ public class Libretto {
 		String s="";
 		for(Voto v:this.voti)
 			s=s+v.toString()+"\n";
-		return this.toString();
+		return s;
+	}
+	public List<Voto> listaVotiUguali(int punteggio) {
+		List<Voto> listaVotiUguali=new LinkedList<>();
+		for(Voto v: this.voti)
+			if(v.getVotoOttenuto()==punteggio)
+				listaVotiUguali.add(v);
+		return listaVotiUguali;
+		
 	}
 
 }
